@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brianna + Patrick - RSVP</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Charm&family=Cormorant:ital,wght@0,300..700;1,300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Great+Vibes&family=Niconne&family=Playfair+Display:ital@0;1&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    html, body {
+        scroll-snap-type: none !important;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="header animate-slide">
+            <h1>BRIANNA & PATRICK'S WEDDING</h1>
+        </div>
+    </header>
+    
+    <nav class="nav-container">
+        <ul class="nav-links fade-slide">
+            <button class="close-nav" aria-label="Close navigation">✖</button>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="welcome-party.html">WELCOME PARTY</a></li>
+            <li><a href="wedding-day.html">WEDDING DAY</a></li>
+            <li><a href="recommendations.html">RECOMMENDATIONS</a></li>
+            <li><a href="registry.html">REGISTRY</a></li>
+            <li><a href="FAQs.html">FAQS</a></li>
+            <li><a href="rsvp.html" class="rsvp-button-mobile">RSVP</a></li>
+        </ul>
+    </nav>
+    
+    <button class="mobile-hamburger" aria-label="Toggle navigation">&#9776;</button>
+
+    <nav class="main-nav animate-slide">
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="welcome-party.html">WELCOME PARTY</a></li>
+            <li><a href="wedding-day.html">WEDDING DAY</a></li>
+            <li><a href="recommendations.html">RECOMMENDATIONS</a></li>
+            <li><a href="registry.html">REGISTRY</a></li>
+            <li><a href="FAQs.html">FAQS</a></li>
+        </ul>
+    </nav>
+
+    <div class="rsvp-ribbon-header animate-slide">
+        <div class="rsvp-text-container">
+            <span class="rsvp-text">RSVP </span>
+            <span class="rsvp-text">RSVP </span>
+            <span class="rsvp-text">RSVP </span>
+            <span class="rsvp-text">RSVP </span>
+            <span class="rsvp-text">RSVP </span>
+            <span class="rsvp-text">RSVP </span>
+            <span class="rsvp-text">RSVP </span>
+        </div>
+    </div>
+
+    <div class="rsvp-container scale-in">
+        <form id="rsvpForm" method="POST">
+            <div class="rsvp-form-header">
+                <h2>Please ensure EACH guest listed in the invitation completes the RSVP form to ensure Welcome Cruise attendance and meal selection is accounted for.</h2>
+            </div>
+            <!-- Guest Information -->
+            <fieldset>
+                <legend>NAME</legend>
+                <div class="name-container">
+                    <div>
+                        <label for="first-name">First Name:</label>
+                        <input type="text" id="first-name" name="firstName" required> <!-- Change to firstName -->
+                    </div>
+                    <div>
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" id="last-name" name="lastName" required> <!-- Change to lastName -->
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Guest section -->
+            <fieldset>
+                <legend>INVITED GUEST (IF APPLICABLE)</legend>
+                <div class="name-container">
+                    <div>
+                        <label for="guestFirstName">Guest First Name:</label>
+                        <input type="text" id="guestFirstName" name="guestFirstName">
+                    </div>
+                    <div>
+                        <label for="guestLastName">Guest Last Name:</label>
+                        <input type="text" id="guestLastName" name="guestLastName">
+                    </div>
+                </div>
+            </fieldset>
+    
+            <!-- Email Address-->
+            <fieldset>
+                <legend>EMAIL ADDRESS</legend>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </fieldset>
+    
+            <!-- Attendance Confirmation -->
+            <fieldset>
+                <legend>WEDDING ATTENDANCE</legend>
+                <label>Will you be attending?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="weddingAttending" value="yes" required> Joyfully Accepts</label> <!-- Changed to weddingAttending -->
+                    <label><input type="radio" name="weddingAttending" value="no"> Regretfully Declines</label> <!-- Changed to weddingAttending -->
+                </div>
+            </fieldset>
+    
+            <!-- Meal Preferences -->
+            <fieldset>
+                <legend>FOOD INFORMATION</legend>
+                <label for="meal">Meal Preference:</label>
+                <select id="meal" name="mealPreference"> <!-- Change to mealPreference -->
+                    <option value="beef">🥩Filet mignon, green beans, & wasabi mashed potatoes</option>
+                    <option value="fish">🐟Macadamia Nut Mahi Mahi with lilikoi butter, asparagus, & pineapple fried rice</option>
+                </select>
+                <label for="guestMeal">Guest Meal Preference: (If Applicable)</label>
+                <select id="guestMeal" name="guestMealPreference"> 
+                    <option value="">Select meal (if bringing invited guest)</option>
+                    <option value="beef">🥩Filet mignon, green beans, & wasabi mashed potatoes</option>
+                    <option value="fish">🐟Macadamia Nut Mahi Mahi with lilikoi butter, asparagus, & pineapple fried rice</option>
+                </select>
+    
+                <!-- Dietary Restrictions -->
+                <label for="dietary">Dietary Restrictions or Allergies:</label>
+                <input type="text" id="dietary" name="dietaryRestrictions" placeholder="e.g., nut allergy (Please be specific)"> <!-- Change to dietaryRestrictions -->
+            </fieldset>
+    
+            <!-- Attendance Confirmation for Welcome Party -->
+            <fieldset>
+                <legend>WELCOME PARTY ATTENDANCE</legend>
+                <label>Will you be joining us for the Welcome Party Cruise on October 7th?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="welcomePartyAttending" value="yes" required> Will Attend</label> <!-- Change to welcomePartyAttending -->
+                    <label><input type="radio" name="welcomePartyAttending" value="no"> Will Not Attend</label> <!-- Change to welcomePartyAttending -->
+                </div>
+            </fieldset>
+    
+            <!-- Location of Where Guests are Staying at -->
+            <fieldset>
+                <legend>DATE OF ARRIVAL & LODGING LOCATION</legend>
+                <label for="location">When will you be arriving and where will you be staying?</label>
+                <textarea id="location" name="lodgingLocation" placeholder="Kapalua, Kaanapali, Lahaina, Kahului, etc."></textarea> <!-- Change to lodgingLocation -->
+            </fieldset>
+    
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn" id="submitBtn">Submit RSVP</button>
+        </form>
+    </div>    
+   
+</body>
+
+</html>
